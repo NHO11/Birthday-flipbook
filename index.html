@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Flipbook</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<canvas id="confetti"></canvas>
+
+<!-- AUDIO FILES -->
+<audio id="bdaySong" controls autoplay loop>
+  <source src="final.mp3" />
+</audio>
+<audio id="clapSound" controls autoplay loop>
+  <source src="final.wav" />
+</audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <div class="birthday-message">
+
+    <h1>My Dear Esam Hossain <br><i> Happy Birthday 🎉</i></h1>
+    <p><strong>
+      Happy birthday to the love of my life! 🎂❤️<br>
+      I’m so incredibly proud of how far you’ve come and everything you continue to achieve.
+      You amaze me every single day, not just with your smile, but with your strength, your
+      heart, and the way you keep going even when things get hard.
+      You make the world brighter & my heart lighter!<br>
+      Your smile is my favorite sunshine.<br>
+      You are the best person I’ve achieved in my life.<br>
+      May your day be filled with magic 💫<br>
+      You deserve all the happiness 🎀<br>
+      I love you endlessly! Now go shine my little soda pop! 🎉💖
+    </p></strong>
+  </div>
+  <button class="start-btn" onclick="goToPage('page2')">Let’s Begin ➤</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <img class="main-photo" src="https://cdn-icons-png.flaticon.com/256/7173/7173088.png" alt="Quiz" />
+  <h2>I have some questions for you 💌</h2>
+  <p style="color: #f44336;">Ready for a tiny quiz full of love?</p>
+  <button class="answer-btn" onclick="goToPage('question1')">Yes ➤</button>
+</div>
+
+<!-- Question Pages -->
+<div class="page" id="question1">
+  <h2>Do you know how handsome you are in my eyes? 😏</h2>
+  <button class="answer-btn" onclick="goToPage('question2')">Yes 😎</button>
+  <button class="answer-btn" onclick="tease('You better believe it! You’re the human version of a heart-throb ❤️')">No 🙈</button>
+</div>
+
+<div class="page" id="teasePage">
+  <h2 id="teaseResponse"></h2>
+  <button class="answer-btn" onclick="goToPage('question2')">Next ➤</button>
+</div>
+
+<div class="page" id="question2">
+  <h2>Will you let me annoy you forever with love? 😜</h2>
+  <button class="answer-btn" onclick="goToPage('question3')">Yes 💖</button>
+  <button class="answer-btn" onclick="tease('Too bad! You’re already stuck with me! 😘')">No 😂</button>
+</div>
+
+<div class="page" id="question3">
+  <h2>If I stole your hoodie, would you fight me or cuddle me? 🧸</h2>
+  <button class="answer-btn" onclick="goToPage('question4')">Cuddle you 🥰</button>
+  <button class="answer-btn" onclick="tease('Wrong answer! You know I look cute in it 😼')">Fight 😠</button>
+</div>
+
+<div class="page" id="question4">
+  <h2>Will you promise to smile forever? 😊</h2>
+  <button class="answer-btn" onclick="goToPage('question5')">yes 💘</button>
+  <button class="answer-btn" onclick="tease('Rude! 😒 Your smile makes my whole day worth it! Smile, please? Like a cute emoji 🥺')">Nope 😅</button>
+</div>
+
+<div class="page" id="question5">
+  <h2>Would you blow a cake if I say there’s applause waiting? 🎂</h2>
+  <button class="answer-btn" onclick="goToPage('cakePage')">Let’s blow! 🎉</button>
+  <button class="answer-btn" onclick="tease('Come on, the cake’s getting cold! 😆')">Not yet 🍰</button>
+</div>
+
+<!-- Final Cake Page -->
+<div class="page" id="cakePage">
+  <h2><i>🎂 Blow Your Birthday Cake 🎂</i></h2>
+  <canvas id="cake" width="300" height="300"></canvas>
+  <p>Click below to blow the candle!</p>
+  <button class="answer-btn" onclick="blow()">Blow 💨</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
